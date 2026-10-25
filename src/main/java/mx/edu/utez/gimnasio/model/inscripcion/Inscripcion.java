@@ -1,15 +1,14 @@
-package mx.edu.utez.gimnasio.model.Inscripcion;
+package mx.edu.utez.gimnasio.model.inscripcion;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import mx.edu.utez.gimnasio.model.Clase.Clase;
-import mx.edu.utez.gimnasio.model.Cliente.Cliente;
+import mx.edu.utez.gimnasio.model.clase.Clase;
+import mx.edu.utez.gimnasio.model.cliente.Cliente;
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 @Entity
 @Table(name = "Inscripcion")

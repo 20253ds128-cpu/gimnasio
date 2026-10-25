@@ -1,4 +1,4 @@
-package mx.edu.utez.gimnasio.model.Usuario;
+package mx.edu.utez.gimnasio.model.cliente;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,22 +6,21 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
 @Entity
-@Table(name = "Usuario")
+@Table(name = "Cliente")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Usuario {
-   @Id
+public class Cliente {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-   private String nombre;
-   private String Username;
-   private String passwordHash;
-
-   @Enumerated(EnumType.STRING)
-   private Rol rol;
+    private String curp;
+    private String nombre;
+    private String email;
+    @Enumerated(EnumType.STRING)
+    private Estado estado;
+    private String motivoBloqueo;
 
 }
