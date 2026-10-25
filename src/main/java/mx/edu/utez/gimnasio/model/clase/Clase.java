@@ -1,11 +1,11 @@
-package mx.edu.utez.gimnasio.model.Clase;
+package mx.edu.utez.gimnasio.model.clase;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import mx.edu.utez.gimnasio.model.Instructor.Instructor;
+import mx.edu.utez.gimnasio.model.instructor.Instructor;
 
 
 import java.time.LocalTime;

@@ -1,4 +1,4 @@
-package mx.edu.utez.gimnasio.model.Cliente;
+package mx.edu.utez.gimnasio.model.cliente;
 
 public enum Estado {
     ACTIVO,

@@ -1,4 +1,4 @@
-package mx.edu.utez.gimnasio.model.Usuario;
+package mx.edu.utez.gimnasio.model.usuario;
 
 public enum Rol {
     ADMINISTRADOR,

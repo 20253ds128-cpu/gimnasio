@@ -1,4 +1,4 @@
-package mx.edu.utez.gimnasio.model.Instructor;
+package mx.edu.utez.gimnasio.model.instructor;
 
 public enum Especialidad {
     ZUMBA,

@@ -1,11 +1,11 @@
-package mx.edu.utez.gimnasio.model.Instructor;
+package mx.edu.utez.gimnasio.model.instructor;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import mx.edu.utez.gimnasio.model.Usuario.Usuario;
+import mx.edu.utez.gimnasio.model.usuario.Usuario;
 
 @Entity
 @Table(name = "Instructor")
