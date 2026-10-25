@@ -11,24 +11,30 @@ import mx.edu.utez.gimnasio.model.cliente.Cliente;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "Inscripcion")
+@Table(name = "inscripciones",
+uniqueConstraints = {@UniqueConstraint(columnNames = {"clase_id", "cliente_id"})})
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Inscripcion {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "fecha_inscripcion", nullable = false)
     private LocalDateTime fechaInscripcion;
+
     @Enumerated(EnumType.STRING)
+    @Column(name = "estado", nullable = false, length = 20)
     private EstadoInscripcion estadoInscripcion;
 
-    @ManyToOne
-    @JoinColumn(name="cliente_id")
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "cliente_id", nullable = false)
     private Cliente cliente;
 
-    @ManyToOne
-    @JoinColumn(name="clase_id")
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "clase_id", nullable = false)
     private Clase clase;
 }

@@ -11,24 +11,39 @@ import mx.edu.utez.gimnasio.model.instructor.Instructor;
 import java.time.LocalTime;
 
 @Entity
-@Table(name = "Clase")
+@Table(name = "clases")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Clase {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nombre;
-    private String dia_semana;
-    private LocalTime hora_Inicio;
-    private LocalTime hora_Fin;
-    private String sala;
-    private int cupoMaximo;
-    private boolean Activa;
 
-    @ManyToOne
-    @JoinColumn(name="instructor_id")
+    @Column(nullable = false, length = 100)
+    private String nombre;
+
+    @Column(name = "dia_semana", nullable = false, length = 15)
+    private String diaSemana;
+
+    @Column(name = "hora_inicio", nullable = false)
+    private LocalTime horaInicio;
+
+    @Column(name = "hora_fin", nullable = false)
+    private LocalTime horaFin;
+
+    @Column(nullable = false, length = 50)
+    private String sala;
+
+    @Column(name = "cupo_maximo", nullable = false)
+    private int cupoMaximo;
+
+    @Column(nullable = false)
+    private boolean activa = true;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "instructor_id", nullable = false)
     private Instructor instructor;
 }

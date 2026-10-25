@@ -7,20 +7,33 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "Cliente")
+@Table(name = "clientes")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Cliente {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String curp;
-    private String nombre;
-    private String email;
-    @Enumerated(EnumType.STRING)
-    private Estado estado;
-    private String motivoBloqueo;
 
+    @Column(nullable = false, unique = true, length = 18)
+    private String curp;
+
+    @Column(nullable = false, length = 100)
+    private String nombre;
+
+    @Column(length = 15)
+    private String telefono;
+
+    @Column(length = 100)
+    private String email;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 20)
+    private Estado estado;
+
+    @Column(name = "motivo_bloqueo")
+    private String motivoBloqueo;
 }

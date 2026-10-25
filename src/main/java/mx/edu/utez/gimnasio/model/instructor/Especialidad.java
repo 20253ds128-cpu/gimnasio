@@ -4,5 +4,4 @@ public enum Especialidad {
     ZUMBA,
     CROSSFIT,
     PESAS
-
 }

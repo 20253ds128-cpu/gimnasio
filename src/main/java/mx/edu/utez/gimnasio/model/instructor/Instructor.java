@@ -8,27 +8,28 @@ import lombok.Setter;
 import mx.edu.utez.gimnasio.model.usuario.Usuario;
 
 @Entity
-@Table(name = "Instructor")
+@Table(name = "instructores")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Instructor {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    //Falta la llave foranea
+
+    @Column(nullable = false, length = 100)
     private String nombre;
 
-   @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 100)
     private Especialidad especialidad;
-   private boolean activo;
 
-   //Llave foranea
+    @Column(nullable = false)
+    private boolean activo = true;
+
     @OneToOne
-    @JoinColumn(name="Usuario_id")
+    @JoinColumn(name = "usuario_id", unique = true)
     private Usuario usuario;
-
-
-
 }
